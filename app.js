@@ -15,6 +15,11 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var employees = require('./routes/employees');
 var temperature = require('./routes/temperature');
+var accelerometer = require('./routes/accelerometer');
+var pressure = require('./routes/pressure');
+var magnetometer = require('./routes/magnetometer');
+var humidity = require('./routes/humidity');
+var gyroscope = require('./routes/gyroscope');
 
 var app = express();
 
@@ -34,6 +39,11 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/employees', employees);
 app.use('/temperature', temperature);
+app.use('/accelerometer', accelerometer);
+app.use('/pressure', pressure);
+app.use('/magnetometer', magnetometer);
+app.use('/humidity', humidity);
+app.use('/gyroscope', gyroscope);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
