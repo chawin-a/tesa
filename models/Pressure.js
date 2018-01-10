@@ -7,6 +7,6 @@ var PressureSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now },
   });
 
-module.exports = mongoose.model('Pressure', HumiditySchema);
+module.exports = mongoose.model('Pressure', PressureSchema);
 
   

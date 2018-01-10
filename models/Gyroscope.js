@@ -6,6 +6,7 @@ var GyroscopeSchema = new mongoose.Schema({
     val_y: String,
     val_z: String,
     //date: String,
-    date: { type: Date, default: Date.now },
+    date: { type: Date, default: Date.now }, 
   });
-  module.exports = mongoose.model('Gyroscope', GyroscopeSchema);
+
+module.exports = mongoose.model('Gyroscope', GyroscopeSchema);

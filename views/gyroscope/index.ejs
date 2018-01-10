@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Magnetometer</title>
+    <title>Gyroscope</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <div class="container">
-      <h3><a href="/magnetometer/get">Get Magnetometer</a></h3>
-      <h1>Magnetometer</h1>
-      <% if(magnetometer.length>0) { %>
+      <h3><a href="/Gyroscope/get">Get Gyroscope</a></h3>
+      <h1>Gyroscope</h1>
+      <% if(gyroscope.length>0) { %>
       <table class="list-table">
         <thead>
           <tr>
@@ -21,19 +21,19 @@
         </thead>
         <tbody>
 
-          <% for(var i=0; i<magnetometer.length;i++) { %>
+          <% for(var i=0; i<gyroscope.length;i++) { %>
             <tr>
-              <td><%= magnetometer[i].sensID %></td>
-              <td><%= magnetometer[i].val_x %></td>
-              <td><%= magnetometer[i].val_y %></td>
-              <td><%= magnetometer[i].val_z %></td>
-              <td><%= magnetometer[i].date %></td>
+              <td><%= gyroscope[i].sensID %></td>
+              <td><%= gyroscope[i].val_x %></td>
+              <td><%= gyroscope[i].val_y %></td>
+              <td><%= gyroscope[i].val_z %></td>
+              <td><%= gyroscope[i].date %></td>
             </tr>
           <% } %>
         </tbody>
       </table> 
       <% } else { %>
-        <div>No magnetometer found.</div>
+        <div>No Gyroscope found.</div>
       <% } %>
     </div>
   </body>

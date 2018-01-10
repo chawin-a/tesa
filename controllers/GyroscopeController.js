@@ -10,7 +10,7 @@ gyroscopeController.list = function(req, res) {
       console.log("Error:", err);
     }
     else {
-      res.render("../views/gyroscope/index", {gyroscope: gyroscope});
+      res.render("../views/gyroscope/index", {gyroscope});
     }
   });
 };
@@ -22,17 +22,15 @@ gyroscopeController.show = function(req, res) {
       console.log("Error:", err);
     }
     else {
-      res.render("../views/gyroscope/show", {gyroscope: gyroscope});
+      res.render("../views/gyroscope/show", {gyroscope});
     }
   });
 };
 
-// Create new gyroscope
 gyroscopeController.create = function(req, res) {
   res.render("../views/gyroscope/create");
 };
 
-// Save new gyroscope
 gyroscopeController.save = function(req, res) {
   var gyroscope = new Gyroscope(req.body);
 

@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/get', function(req, res) {
-    request('http://10.0.0.10/api/temperature/29/all', function(error, res, body) {
+    request('http://10.0.0.10/api/temperature/29', function(error, res, body) {
         var data = JSON.parse(body);
         // console.log(body);
         // console.log(data);
