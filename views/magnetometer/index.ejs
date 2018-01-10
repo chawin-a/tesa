@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Megnetometer</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/megnetometer/get">Get Megnetometer</a></h3>
+      <h1>Megnetometer</h1>
+      <% if(megnetometer.length>0) { %>
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th>sensID</th>
+            <th>val</th>
+            <th>date</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<megnetometer.length;i++) { %>
+            <tr>
+              <td><%= megnetometer[i].sensID %></td>
+              <td><%= megnetometer[i].val %></td>
+              <td><%= megnetometer[i].date %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table> 
+      <% } else { %>
+        <div>No megnetometer found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>

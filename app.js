@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://test:1q2w3e4r@localhost:27017/tgr2018test', { useMongoClient: true })
+mongoose.connect('mongodb://localhost:27017/tgr2018test', { useMongoClient: true })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
@@ -15,6 +15,11 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var employees = require('./routes/employees');
 var temperature = require('./routes/temperature');
+var pressure = require('./routes/pressure');
+var magnetometer = require('./routes/magnetometer');
+var humidity = require('./routes/humidity');
+var gyroscope = require('./routes/gyroscope');
+var accelerometer = require('./routes/accelerometer');
 
 var app = express();
 
@@ -34,6 +39,11 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/employees', employees);
 app.use('/temperature', temperature);
+app.use('/pressure', pressure);
+app.use('/magnetometer', magnetometer);
+app.use('/humidity', humidity);
+app.use('/gyroscope', gyroscope);
+app.use('/accelerometer', accelerometer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

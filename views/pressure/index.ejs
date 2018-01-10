@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pressure</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/pressure/get">Get Pressure</a></h3>
+      <h1>Pressure</h1>
+      <% if(pressure.length>0) { %>
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th>sensID</th>
+            <th>val</th>
+            <th>date</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<pressure.length;i++) { %>
+            <tr>
+              <td><%= pressure[i].sensID %></td>
+              <td><%= pressure[i].val %></td>
+              <td><%= pressure[i].date %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table> 
+      <% } else { %>
+        <div>No pressure found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>

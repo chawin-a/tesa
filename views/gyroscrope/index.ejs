@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Temperuature</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/gyroscrope/get">Get Gyroscrope</a></h3>
+      <h1>Gyroscrope</h1>
+      <% if(gyroscrope.length>0) { %>
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th>sensID</th>
+            <th>val</th>
+            <th>date</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<gyroscrope.length;i++) { %>
+            <tr>
+              <td><%= gyroscrope[i].sensID %></td>
+              <td><%= gyroscrope[i].val %></td>
+              <td><%= gyroscrope[i].date %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table> 
+      <% } else { %>
+        <div>No gyroscrope found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>
