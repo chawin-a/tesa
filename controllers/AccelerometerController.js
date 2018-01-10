@@ -5,24 +5,24 @@ var accelerometerController = {};
 
 // Show list of accelerometer
 accelerometerController.list = function(req, res) {
-  Accelerometer.find({}).exec(function (err, data) {
+  Accelerometer.find({}).exec(function (err, accelerometer) {
     if (err) {
       console.log("Error:", err);
     }
     else {
-      res.render("../views/accelerometer/index", {data});
+      res.render("../views/accelerometer/index", {accelerometer});
     }
   });
 };
 
 // Show accelerometer by id
 accelerometerController.show = function(req, res) {
-  Accelerometer.findOne({_id: req.params.id}).exec(function (err, data) {
+  Accelerometer.findOne({_id: req.params.id}).exec(function (err, accelerometer) {
     if (err) {
       console.log("Error:", err);
     }
     else {
-      res.render("../views/accelerometer/show", {data});
+      res.render("../views/accelerometer/show", {accelerometer});
     }
   });
 };
