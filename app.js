@@ -14,6 +14,7 @@ mongoose.connect('mongodb://test:1q2w3e4r@localhost:27017/tgr2018test', { useMon
 var index = require('./routes/index');
 var users = require('./routes/users');
 var employees = require('./routes/employees');
+var temperature = require('./routes/temperature');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/employees', employees);
+app.use('/temperature', temperature);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

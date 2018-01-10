@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Temperuature</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/temperature/get">Get Temperature</a></h3>
+      <h1>Temperature</h1>
+      <% if(temperature.length>0) { %>
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th>sensID</th>
+            <th>val</th>
+            <th>date</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<temperature.length;i++) { %>
+            <tr>
+              <td><%= temperature[i].sensID %></td>
+              <td><%= temperature[i].val %></td>
+              <td><%= temperature[i].date %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table> 
+      <% } else { %>
+        <div>No temperature found.</div>
+      <% } %>
+    </div>
+  </body>
+</html>
