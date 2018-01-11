@@ -1,38 +1,80 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Din1</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <%- include('../../public/script/header') %>
+    <title>Digital Input</title>
   </head>
   <body>
-    <div class="container">
-      <h3><a href="/din1/get">Get Din1</a></h3>
-      <h1>Din1</h1>
-      <% if(din1.length>0) { %>
-      <table class="list-table">
-        <thead>
-          <tr>
-            <th>TeamID</th>
-            <th>sensID</th>
-            <th>val</th>
-            <th>date</th>
-          </tr>
-        </thead>
-        <tbody>
+    <%- include('../../public/script/navbar') %>
+    <div class ="content container">
+        <div class ="row" >
+            <h3><a href="/din1/get">Get Temperature</a></h3>  
+        </div>
 
-          <% for(var i=0; i<din1.length;i++) { %>
-            <tr>
-              <td><%= din1[i].TeamID %></td>
-              <td><%= din1[i].sensID %></td>
-              <td><%= din1[i].val %></td>
-              <td><%= din1[i].date %></td>
-            </tr>
-          <% } %>
-        </tbody>
-      </table> 
-      <% } else { %>
-        <div>No din1 found.</div>
-      <% } %>
+        
+        <div class = "row" id="body-content">
+            
+            <!-- Subhead -->
+            <h1 class="hide-iframe">Din1</h1>
+            <!-- Subhead -->
+            <div class="header header-sub hide-desktop show-iframe">
+                <div class="header-sub-header">
+                    <p>Din1</p>
+                </div>
+            </div>
+            Content box
+            <div id="content-box">
+                <p id="first-p" class="intro-text">Edit by Psyduck and the Gang</p>
+                <table id="searchable-table" class="display">
+                    <% if(din1.length>0) { %>
+                    <thead>
+                        <tr>
+                            <th>TeamID</th>
+                            <th>sensID</th>
+                            <th>val</th>
+                            <th>date</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            <!-- Close content box-->
+           </div>
+           <div id="footer" class="header hide-desktop show-mobile">
+                <a href="#">Scroll to top</a>
+            </div>
+            <!-- Close body content-->
+            
+            <!-- Templates -->
+            <script id="datatable-template" type="">
+                
+                <% for(var i=0; i<din1.length ;i++) { %>
+                
+                <tr class=" body">
+                    <td><%= din1[i].TeamID %></td>
+                    <td><%= din1[i].sensID %></td>
+                    <td><%= din1[i].val %></td>
+                    <td><%= din1[i].date %></td>
+                    
+                                  
+                  </tr>
+                  
+                  <% } %>
+  
+                  <% } else { %>
+                    <div>No din1 found.</div>
+                  <% } %>
+        </script> -->
+  
+        <!-- #################### End Code table#######################  -->
+  
+    <!-- Custom JS -->
+    <script src="/datatable-template-master/js/base.js"></script>
+    <script src="/datatable-template-master/js/datatable-tabletop-load.js"></script>
+    <!-- Close content-->
     </div>
+    </div>
+
+
+    
   </body>
 </html>

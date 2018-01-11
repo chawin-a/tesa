@@ -3,6 +3,25 @@
   <head>
       <%- include('../../public/script/header') %>
     <title>Temperature</title>
+
+    <!-- code for black table -->
+        <!-- <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="TableTemplate/images/icons/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="TableTemplate/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="TableTemplate/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="TableTemplate/vendor/animate/animate.css">
+        <link rel="stylesheet" type="text/css" href="TableTemplate/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="TableTemplate/vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="TableTemplate/css/util.css">
+        <link rel="stylesheet" type="text/css" href="TableTemplate/css/main.css"> -->
+        
+    <!-- End of code for black table -->
+
+    <!-- Old css -->
+        <!-- <link rel='stylesheet' href='/stylesheets/style2.css' /> -->
+    <!-- Close Old Css -->
+    
   </head>
   <body>
 
@@ -10,14 +29,9 @@
     <div class ="content">
 
       
-      <!-- <div class ="row" >
+      <div class ="row default-button" >
         <h3><a href="/temperature/get">Get Temperature</a></h3>  
-          <h1>Temperature</h1>
-          <form method="post" action="/temperature/time">
-             <input type="time" name="time" placeholder="(HH:MM)"  />
-             <input type="submit" />
-          </form>
-        </div> -->
+      </div>
 
 
       
@@ -103,8 +117,7 @@
           </div>
           <!-- Templates -->
           <script id="datatable-template" type="">
-              <% for(var i=0; i<temperature.length;i++) { %>
-              
+              <% for(var i=0; i<temperature.length;i++) { %> 
               <tr class="row100 body">
                   <td><%= temperature[i].TeamID %></td>
                   <td><%= temperature[i].sensID %></td>
@@ -120,12 +133,12 @@
       </script>
 
       <!-- #################### End Code table#######################  -->
-
+    
   <!-- Custom JS -->
   <script src="/datatable-template-master/js/base.js"></script>
   <script src="/datatable-template-master/js/datatable-tabletop-load.js"></script>
   <!-- Close content-->
-  </div>
+  
     
   </body>
 </html>

@@ -74,18 +74,25 @@ function loadDataTable() {
         "aaSorting": [[ 0, "asc" ]],
         "aoColumns": [
            {
-                "sWidth": "30%"
+                "sWidth": "7%"
                 // "sType": "formatted-num" 
             },{
-                "sWidth": "23%"
+                "sWidth": "7%"
                 // "sType": "formatted-num" 
             },{
-                "sWidth": "23%"
+                "sWidth": "13%"
                 // "sType": "formatted-num" 
             },{
-                "sWidth": "23%"
+                "sWidth": "15%"
+                // "sType": "formatted-num" 
+            },{
+                "sWidth": "5%"
+                // "sType": "formatted-num" 
+            },{
+                "sWidth": "20%"
                 // "sType": "formatted-num" 
             }
+            
         ],
         // Fix thead to top of page when scrolling past it
         "initComplete": function(settings, json) {
