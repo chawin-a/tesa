@@ -104,6 +104,7 @@ router.get('/predict', function(req, res, next) {
   Predict.find({}).exec(function(err, predict) {
     if(err) console.log(err);
     else {
+      // console.log(predict);
       res.render('../views/predict/predict', {predict});
     }
   })

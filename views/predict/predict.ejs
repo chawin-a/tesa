@@ -1,71 +1,86 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <%- include('../../public/script/header') %>
+<html lang="en">
+
+<head>
     <title>Predict</title>
-  </head>
-  <body>
+    <%- include('../../public/script/header') %>
 
+</head>
+
+<body>
     <%- include('../../public/script/navbar') %>
-    <div>
+        <div class="container limiter">
+            <div class="row ">
+                <div class="col-sm-9 subpage__header">
+                    <h1>Predict</h1>
+                </div>
+            </div>
+        </div>
 
-      
-      <div class ="row default-button" >
-        <h3><a href="/predict/get">Get Predict</a></h3>  
-      </div>
+        <div class="container-table100" style="background: transparent; text-align:center;">
+            <div class="wrap-table100">
 
-      <div id="body-content">
-          <h1 class="hide-iframe">Predict</h1>
-          <!-- Subhead -->
-          <div class="header header-sub hide-desktop show-iframe">
-              <div class="header-sub-header">
-                  <p>Predict</p>
-              </div>
-          </div>
-          <!-- Content box-->
-          <div id="content-box">
-              <p id="first-p" class="intro-text">Edit by Psyduck and the Gang</p>
-              <table id="searchable-table" class="display">
-                  <% if(predict.length>0) { %>
-                  <thead>
-                      <tr>
-                          <th>TeamID</th>
-                          <th>Description/th>
-                          <th>Date/th>
-                      </tr>
-                  </thead>
-                  <tbody></tbody>
-              </table>
-          <!-- Close content box-->
-         </div>
-         <div id="footer" class="header hide-desktop show-mobile">
-              <a href="#">Scroll to top</a>
-          </div>
-          <!-- Close body content-->
-          </div>
-          <!-- Templates -->
-          <script id="datatable-template" type="">
-              <% for(var i=0; i<predict.length;i++) { %> 
-              <tr class="row100 body">
-                  <td><%= predict[i].TeamID %></td>
-                  <td><%= predict[i].description %></td>
-                  <td><%= predict[i].date %></td>
-                </tr>
-                
-                <% } %>
+                <div class="table100 ver3 m-b-110">
+                    <div class="table100-head">
+                        <table>
 
-                <% } else { %>
-                  <div>No predict found.</div>
-                <% } %>
-      </script>
+                            <thead>
+                                <% if(predict.length>0) { %>
+                                    <tr class="row100 head">
+                                        <th class="cell100 column5">TeamID</th>
+                                        <th class="cell100 column5">Elephant(%)</th>
+                                        <th class="cell100 column5">Fire(%)</th>
+                                        <th class="cell100 column5">Tree(%)</th>
+                                        <th class="cell100 column5">Normal(%)</th>
+                                        <th class="cell100 column5">Date</th>
+                                    </tr>
+                            </thead>
+                        </table>
+                    </div>
 
-      <!-- #################### End Code table#######################  -->
-    
-  <!-- Custom JS -->
-  <script src="/datatable-template-master/js/base.js"></script>
-  <script src="/datatable-template-master/js/datatable-tabletop-load.js"></script>
-  <!-- Close content-->
-  
-    
-  </body>
+                    <div class="table100-body js-pscroll">
+                        <table>
+
+                            <tbody>
+                                <% for(var i=0; i<predict.length;i++) { %>
+                                    <tr class="row100 body">
+                                        <td class="cell100 column5">
+                                            <%= predict[i].TeamID %>
+                                        </td>
+                                        <td class="cell100 column5">
+                                            <%= Number(predict[i].elephen*100).toFixed(2) %>
+                                        </td>
+                                        <td class="cell100 column5">
+                                            <%= Number(predict[i].fire*100).toFixed(2) %>
+                                        </td>
+                                        <td class="cell100 column5">
+                                            <%= Number(predict[i].tree*100).toFixed(2) %>
+                                        </td>
+                                        <td class="cell100 column5">
+                                            <%= Number(predict[i].normal*100).toFixed(2) %>
+                                        </td>
+                                        <td class="cell100 column5">
+                                            <%= predict[i].date.toLocaleString() %>
+                                        </td>
+
+                                    </tr>
+                            </tbody>
+                            <% } %>
+                                <% } else { %>
+                                    <div>No predict found.</div>
+                                    <% } %>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+
+
+        <%- include('../../public/script/tails') %>
+
+</body>
+
 </html>
