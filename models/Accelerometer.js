@@ -7,6 +7,7 @@ var AccelerometerSchema = new mongoose.Schema({
     val_z: String,
     //date: String,
     date: { type: Date, default: Date.now }, 
+    TeamID: String,
   });
 
 module.exports = mongoose.model('Accelerometer', AccelerometerSchema);

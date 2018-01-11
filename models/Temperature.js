@@ -5,6 +5,7 @@ var TemperatureSchema = new mongoose.Schema({
     val: String,
     //date: String,
     date: { type: Date, default: Date.now },
+    TeamID: String,
   });
 
   module.exports = mongoose.model('Temparature', TemperatureSchema);
