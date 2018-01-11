@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "drop": "node dropdb.js"
   },
   "dependencies": {
@@ -12,8 +12,10 @@
     "debug": "~2.6.0",
     "ejs": "~2.5.5",
     "express": "~4.14.1",
+    "global": "^4.3.2",
     "mongoose": "^4.8.4",
     "morgan": "~1.7.0",
+    "nodemon": "^1.14.11",
     "request": "^2.83.0",
     "serve-favicon": "~2.3.2"
   }

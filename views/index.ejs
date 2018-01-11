@@ -20,8 +20,9 @@
     
     
   </head>
-  <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <body style="background:transparent">
+ 
+    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <ul class="navbar-nav">
           <li class="nav-item active">
               <a class="nav-link" href="#"><h5><%= title %></h5></a>
@@ -36,8 +37,21 @@
           <a class="nav-link" href="/din1">Digital Input 1</a>
         </li> 
       </ul>
-    </nav>
+    </nav> -->
+    <%- include('navbar') %>
 
+    <div class="container">
+        <div class="row ">
+          <img class="index__tesa-logo" itemprop="image" src="/images/topgun_logo.png" alt="">
+        </div>
+        <div class="row">
+          <img class = "index__sponsor" itemprop="image" src="/images/sponsor.jpg" alt="">
+        </div>
+        <div class="row">
+          <img class = "index__team-logo" itemprop="image" src="/images/team_logo.png" alt="">
+          <img class = "index__pokeball" itemprop="image" src="/images/pokeball.svg" alt="">
+        </div>
+    </div>
      <!-- <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <h4><a href="/temperature">Temperature</a></h4>
