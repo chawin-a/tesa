@@ -87,42 +87,42 @@
 
       <div id="body-content">
           <h1 class="hide-iframe">Temperature</h1>
-          <!-- Subhead -->
+          
           <div class="header header-sub hide-desktop show-iframe">
               <div class="header-sub-header">
                   <p>Temperature</p>
               </div>
           </div>
-          <!-- Content box-->
+          
           <div id="content-box">
               <p id="first-p" class="intro-text">Edit by Psyduck and the Gang</p>
               <table id="searchable-table" class="display">
                   <% if(temperature.length>0) { %>
                   <thead>
                       <tr>
-                          <th>TeamID</th>
+                          <th>ID</th>
                           <th>sensID</th>
-                          <th>Val</th>
-                          <th>Date/th>
+                          <th>Value</th>
+                          <th>Date</th>
                       </tr>
                   </thead>
                   <tbody></tbody>
               </table>
-          <!-- Close content box-->
+          
          </div>
          <div id="footer" class="header hide-desktop show-mobile">
               <a href="#">Scroll to top</a>
           </div>
-          <!-- Close body content-->
+          
           </div>
-          <!-- Templates -->
+          
           <script id="datatable-template" type="">
               <% for(var i=0; i<temperature.length;i++) { %> 
               <tr class="row100 body">
                   <td><%= temperature[i].TeamID %></td>
                   <td><%= temperature[i].sensID %></td>
                   <td><%= temperature[i].val %></td>
-                  <td><%= temperature[i].date %></td>
+                  <td><%= temperature[i].date.toLocaleString() %></td>
                 </tr>
                 
                 <% } %>
@@ -132,12 +132,12 @@
                 <% } %>
       </script>
 
-      <!-- #################### End Code table#######################  -->
+     
     
-  <!-- Custom JS -->
+  
   <script src="/datatable-template-master/js/base.js"></script>
   <script src="/datatable-template-master/js/datatable-tabletop-load.js"></script>
-  <!-- Close content-->
+  
   
     
   </body>

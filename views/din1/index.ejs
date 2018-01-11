@@ -29,7 +29,7 @@
                     <% if(din1.length>0) { %>
                     <thead>
                         <tr>
-                            <th>TeamID</th>
+                            <th>ID</th>
                             <th>sensID</th>
                             <th>val</th>
                             <th>date</th>
@@ -53,17 +53,13 @@
                     <td><%= din1[i].TeamID %></td>
                     <td><%= din1[i].sensID %></td>
                     <td><%= din1[i].val %></td>
-                    <td><%= din1[i].date %></td>
-                    
-                                  
-                  </tr>
-                  
+                    <td><%= din1[i].date.toLocaleString() %></td>                      
+                  </tr>                 
                   <% } %>
-  
                   <% } else { %>
                     <div>No din1 found.</div>
                   <% } %>
-        </script> -->
+        </script> 
   
         <!-- #################### End Code table#######################  -->
   

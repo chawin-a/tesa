@@ -70,7 +70,7 @@ function loadDataTable() {
         "oLanguage": {
             "sLengthMenu": "_MENU_ records per page"
         },
-        "iDisplayLength": 25,
+        "iDisplayLength": 10,
         "aaSorting": [[ 0, "asc" ]],
         "aoColumns": [
            {
