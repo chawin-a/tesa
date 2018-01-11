@@ -15,6 +15,7 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
   var end = Number(req.params.end / 100).toFixed(2).toString().split('.');
   var startTime = new Date();
   var endTime = new Date();
+  var yesterday = new Date(2018, 0, 10);
   startTime.setDate(11);
   startTime.setHours(start[0]);
   startTime.setMinutes(start[1]);
@@ -34,31 +35,37 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
     obj["Temperature"] = [];
     for(var i=0;i<output[0].length;i++) {
       var temp = {};
-      temp["val"] = output[0][i]["val"];
-      temp["teamID"] = output[0][i]["TeamID"];
-      temp["date"] = output[0][i]["date"];
+      temp["val"] = Number(output[0][i]["val"]);
+      temp["teamID"] = Number(output[0][i]["TeamID"]);
+      temp["date"] = Number(output[0][i]["date"] - yesterday);
       obj["Temperature"].push(temp);
     }
     obj["Accelerometer"] = [];
     for(var i=0;i<output[1].length;i++) {
       var temp = {};
-      temp["val_x"] = output[1][i]["val_x"];
-      temp["val_y"] = output[1][i]["val_y"];
-      temp["val_z"] = output[1][i]["val_z"];
-      temp["teamID"] = output[1][i]["TeamID"];
-      temp["date"] = output[1][i]["date"];
+      temp["val_x"] = Number(output[1][i]["val_x"]);
+      temp["val_y"] = Number(output[1][i]["val_y"]);
+      temp["val_z"] = Number(output[1][i]["val_z"]);
+      temp["teamID"] = Number(output[1][i]["TeamID"]);
+      temp["date"] = Number(output[1][i]["date"] - yesterday);
       obj["Accelerometer"].push(temp);
     }
     obj["Din1"] = [];
     for(var i=0;i<output[2].length;i++) {
       var temp = {};
-      temp["val"] = output[2][i]["val"];
-      temp["teamID"] = output[2][i]["TeamID"];
-      temp["date"] = output[2][i]["date"];
+      temp["val"] = Number(output[2][i]["val"]);
+      temp["teamID"] = Number(output[2][i]["TeamID"]);
+      temp["date"] = Number(output[2][i]["date"] - yesterday);
       obj["Din1"].push(temp);
     }
     res.send(obj);
   })
-})
+});
+
+router.post('/alert', function(req, res, next) {
+  var alert = req.body;
+  // console.log(alert);
+  res.render('alert', { teamID: alert.teamID, description: alert.description });
+});
 
 module.exports = router;
