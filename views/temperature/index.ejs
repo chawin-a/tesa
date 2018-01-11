@@ -4,6 +4,7 @@
 	<title>Temperature</title>
   <%- include('../../public/script/header') %>
 
+<<<<<<< HEAD
 </head>
 <body>
 	<%- include('../../public/script/navbar') %>
@@ -33,6 +34,56 @@
 							</thead>
 						</table>
 					</div>
+=======
+  </head>
+  <body>
+    <%- include('../../public/script/navbar') %>
+    <div>
+
+     
+     
+    <div class ="content container">
+       
+      <div id="body-content">
+              <div class="">
+                <div class="subpage__header">
+                  <h1>Temperature</h1>
+                </div>
+                <a class="active btn btn-success" href="/temperature/get">Update Temperature</a>
+              </div>
+          <!-- Content box-->
+          <div class="" id="content-box">
+              <table id="searchable-table" class="display">
+                  <% if(temperature.length>0) { %>
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>sensID</th>
+                          <th>Val</th>
+                          <th>Date</th>
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+              </table>
+          
+         </div>
+         <div id="footer" class="header hide-desktop show-mobile">
+              <a href="#">Scroll to top</a>
+          </div>
+          <!-- Close body content-->
+        </div>
+          <!-- Templates -->
+          <script id="datatable-template" type="">
+              <% for(var i=0; i<temperature.length;i++) { %> 
+              <tr class="row100 body">
+                  <td><%= temperature[i].TeamID %></td>
+                  <td><%= temperature[i].sensID %></td>
+                  <td><%= temperature[i].val %></td>
+                  <td><%= temperature[i].date.toLocaleString() %></td>
+                </tr>
+                
+                <% } %>
+>>>>>>> 4caec9147a94d7c71a6326d1a7e2cbe1683289e7
 
 					<div class="table100-body js-pscroll">
 						<table>
