@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project name goes here | The Gazette/KCRG</title>
+    <!-- <meta http-equiv="refresh" content="300"> -->
+    <meta charset="utf-8" />
+    <!-- INCLUDES -->
+    <!-- Base styles: Libraries -->
+    <link rel="stylesheet" href="css/lib/bootstrap.css" />
+    <link rel="stylesheet" href="css/lib/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="css/lib/font-awesome-4.2.0.css" />
+    <link rel="stylesheet" href="css/lib/jquery.dataTables.min.css" />
+    
+    <!-- Base styles -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/base-datatable.css" />
+
+    <!-- JS: Libraries -->
+    <script src="js/lib/jquery-1.11.1.js"></script>
+    <script src="js/lib/jquery.dataTables.min.js"></script>
+    <script src="js/lib/tabletop.js"></script>
+    <script src="js/lib/underscore.js"></script>
+    <script src="js/lib/handlebars-v1.3.0.js"></script>
+    <!-- End Google Analytics Javascript -->
+</head>
+<body>
+    <!-- Content-->
+    <div class="content">
+       
+    <!-- CONTENT GOES HERE -->
+    <div id="body-content">
+        <h1 class="hide-iframe">Project name goes here</h1>
+        <!-- Subhead -->
+        <div class="header header-sub hide-desktop show-iframe">
+            <div class="header-sub-header">
+                <p>Project name goes here</p>
+            </div>
+        </div>
+        <!-- Content box-->
+        <div id="content-box">
+            <p id="first-p" class="intro-text">The project's full description goes here</p>
+            <table id="searchable-table" class="display">
+                <thead>
+                    <tr>
+                        <th>Department</th>
+                        <th>Items</th>
+                        <th>Max cost</th>
+                        <th>Last received</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        <!-- Close content box-->
+       </div>
+       <div id="footer" class="header hide-desktop show-mobile">
+            <a href="#">Scroll to top</a>
+        </div>
+    <!-- Close body content-->
+    </div>
+    <!-- Templates -->
+    <script id="datatable-template" type="">
+        {{#each elements}}
+            <tr>
+                <td data-title="Department:">{{ department }}</td>
+                <td data-title="Item:">{{ countagency }}</td>
+                <td data-title="Max cost:">{{ maxcost }}</td>
+                <td data-title="Last received:">{{ maxshipdate }}</td>
+            </tr>
+        {{/each}}
+    </script>
+    <!-- Custom JS -->
+    <script src="js/base.js"></script>
+    <script src="js/datatable-tabletop-load.js"></script>
+    <!-- Close content-->
+    </div>
+    </body>
+</html>
