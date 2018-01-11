@@ -8,6 +8,10 @@
     <div class="container">
       <h3><a href="/temperature/get">Get Temperature</a></h3>
       <h1>Temperature</h1>
+      <form method="post" action="/temperature/time">
+        Time: <input type="time" name="time" />
+        <input type="submit" />
+      </form>
       <% if(temperature.length>0) { %>
       <table class="list-table">
         <thead>
