@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
 router.get('/get', function (req, res) {
   var requestData = [];
   for (var i = 0; i < urls.teams; i++) {
-    requestData.push(request(urls.url + 'din1/' + urls.teamID[i] + '/2', urls.teamID[i]));
+    requestData.push(request(urls.url + 'din1/' + urls.teamID[i] + '/all', urls.teamID[i]));
   }
   Promise.all(requestData)
     .then(function (output) {
@@ -33,6 +33,7 @@ router.get('/get', function (req, res) {
       return Promise.all(updated);
     })
     .then(function () {
+      console.log("success!!!");
       res.redirect("/din1");
     })
 });
