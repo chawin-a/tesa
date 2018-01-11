@@ -4,7 +4,34 @@
     <title>Accelerometer</title>
     <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
 
+    <meta charset="utf-8" />
+    <!-- INCLUDES -->
+    <link rel="stylesheet" href="/tether/css/tether.min.css" />
+    <script src="/tether/js/tether.min.js"></script>
+    <!-- Base styles: Libraries -->
+    <link rel="stylesheet" href="/datatable-template-master/css/lib/bootstrap.css" />
+    <link rel="stylesheet" href="/datatable-template-master/css/lib/bootstrap-responsive.css" />
+    <link rel="stylesheet" href="/datatable-template-master/css/lib/font-awesome-4.2.0.css" />
+    <link rel="stylesheet" href="/datatable-template-master/css/lib/jquery.dataTables.min.css" />
     
+    <!-- Base styles -->
+    <link rel="stylesheet" href="/datatable-template-master/css/base.css" />
+    <link rel="stylesheet" href="/datatable-template-master/css/base-datatable.css" />
+
+    <!-- JS: Libraries -->
+    <script src="/datatable-template-master/js/lib/jquery-1.11.1.js"></script>
+    <script src="/datatable-template-master/js/lib/jquery.dataTables.min.js"></script>
+    <script src="/datatable-template-master/js/lib/tabletop.js"></script>
+    <script src="/datatable-template-master/js/lib/underscore.js"></script>
+    <script src="/datatable-template-master/js/lib/handlebars-v1.3.0.js"></script>
+    <!-- End Google Analytics Javascript -->
+
+    <!-- ######################## Start link and script for Navbar ############################### -->
+    <link rel="stylesheet" href="/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+    <!-- <script src="/bootstrap-4.0.0-alpha.6-dist/js/jquery.min.js"></script> -->
+    <script src="/bootstrap-4.0.0-alpha.6-dist/js/popper.min.js"></script>
+    <script src="/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
+    <!-- ######################## End link and script for Navbar ############################### -->
     
     
   </head>
@@ -21,7 +48,7 @@
       
 
      <!-- Start Old Code  -->
-          <div class="container">
+          <!-- <div class="container">
             <h3><a href="/accelerometer/get">Get Accelerometer</a></h3>
             <h1>Accelerometer</h1>
             <% if(accelerometer.length>0) { %>
@@ -53,7 +80,7 @@
             <% } else { %>
               <div>No accelerometer found.</div>
             <% } %>
-          </div>
+          </div> -->
       <!-- End Old code  -->
 
 
@@ -81,13 +108,13 @@
       <!-- <div class ="content">
       <div id="body-content">
           <h1 class="hide-iframe">Accelerometer</h1>
-       
+          <!-- Subhead -->
           <div class="header header-sub hide-desktop show-iframe">
               <div class="header-sub-header">
                   <p>Accelerometer</p>
               </div>
           </div>
-          
+          <!-- Content box-->
           <div id="content-box">
               <p id="first-p" class="intro-text">Edit by Psyduck and the Gang</p>
               <table id="searchable-table" class="display">
@@ -104,14 +131,14 @@
                   </thead>
                   <tbody></tbody>
               </table>
-          
+          <!-- Close content box-->
          </div>
          <div id="footer" class="header hide-desktop show-mobile">
               <a href="#">Scroll to top</a>
           </div>
-          
+          <!-- Close body content-->
           </div>
-          
+          <!-- Templates -->
           <script id="datatable-template" type="">
               <% for(var i=0; i<accelerometer.length ;i++) { %>
               
@@ -119,7 +146,7 @@
                   <td><%= accelerometer[i].TeamID %></td>
                   <td><%= accelerometer[i].sensID %></td>
                   <td><%= accelerometer[i].val_x %></td>
-                  <td><%= accelerometer[i].date %></td>
+                  
                 </tr>
                 
                 <% } %>
