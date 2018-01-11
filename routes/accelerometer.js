@@ -14,12 +14,19 @@ router.get('/', function(req, res) {
 router.get('/get', function(req, res) {
   var requestData = [];
   for(var i=1;i<=urls.teams;i++) {
-    requestData.push(request(urls.url + 'accelerometer/' + i));
-  }  
+    requestData.push(request(urls.url + 'accelerometer/' + i + '/1'));
+  }
+  console.log("test");
   Promise.all(requestData)
   .then(function(data) {
     for(var i=0;i<data.length;i++) {
-      console.log(data[i]);
+      // console.log(data[i]);
+      if(data[i]["statusCode"] != "00") continue;
+      var q = new Accelerometer(data[i]["data"][0]);
+      q.save(function(error) {
+        if(error) console.log(error);
+        res.redirect("/accelerometer");
+      });
     }
   })
     // request('http://10.0.0.10/api/accelerometer/29', function(error, res, body) {
