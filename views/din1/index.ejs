@@ -1,79 +1,71 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <%- include('../../public/script/header') %>
-    <title>Digital Input</title>
-  </head>
-  <body>
-    <%- include('../../public/script/navbar') %>
-    <div class ="content container">
-
-        
-        <div  id="body-content">
-            <div class="">
-                    <div class="subpage__header">
-                        <h1>Digital Input</h1>
-                    </div>
-                    <a class="active btn btn-success" href="/din1/get">Update Digital Input</a>
-            </div>  
-            <!-- Subhead -->
-            <div class="header header-sub hide-desktop show-iframe">
-                <div class="header-sub-header">
-                    <p>Din1</p>
-                </div>
-            </div>
-          
-            <div id="content-box">
-                <table id="searchable-table" class="display">
-                    <% if(din1.length>0) { %>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>sensID</th>
-                            <th>val</th>
-                            <th>date</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            <!-- Close content box-->
-           </div>
-           <div id="footer" class="header hide-desktop show-mobile">
-                <a href="#">Scroll to top</a>
-            </div>
-            <!-- Close body content-->
-            
-            <!-- Templates -->
-            <script id="datatable-template" type="">
-                
-                <% for(var i=0; i<din1.length ;i++) { %>
-                
-                <tr class=" body">
-                    <td><%= din1[i].TeamID %></td>
-                    <td><%= din1[i].sensID %></td>
-                    <td><%= din1[i].val %></td>
-                    <td><%= din1[i].date.toLocaleString() %></td>                      
-                  </tr>                 
-                  <% } %>
-                  <% } else { %>
-                    <div>No din1 found.</div>
-                  <% } %>
-<<<<<<< HEAD
-        </script> 
-=======
-        </script>
->>>>>>> f5ab8e26bf6542f2f74d95686ec0c03654ace625
+<html lang="en">
+<head>
+	<title>Temperature</title>
+  <%- include('../../public/script/header') %>
   
-        <!-- #################### End Code table#######################  -->
+ 
+</head>
+<body>
+	<%- include('../../public/script/navbar') %>
+	<div class="limiter">
+      <div class="">
+          <div class="subpage__header">
+              <h1>Digital Input</h1>
+          </div>
+          <a class="active btn btn-success" href="/din1/get">Update Digital Input</a>
+  </div> 
   
-    <!-- Custom JS -->
-    <script src="/datatable-template-master/js/base.js"></script>
-    <script src="/datatable-template-master/js/datatable-tabletop-load.js"></script>
-    <!-- Close content-->
-    </div>
-    </div>
+    <div class="container-table100" style="background: transparent; text-align:center;"  >
+			<div class="wrap-table100">
+				
+				<div class="table100 ver3 m-b-110">
+					<div class="table100-head">
+						<table>
+							
+							<thead>
+                  <% if(din1.length>0) { %>
+								<tr class="row100 head">
+									<th class="cell100 column5">ID</th>
+									<th class="cell100 column5">SensID</th>
+									<th class="cell100 column5">Value</th>
+									<th class="cell100 column5">Date</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							
+							<tbody>
+                  <% for(var i=0; i<din1.length;i++) { %> 
+								<tr class="row100 body">
+									<td class="cell100 column5"><%= din1[i].TeamID %></td>
+									<td class="cell100 column5"><%= din1[i].sensID %></td>
+									<td class="cell100 column5"><%= din1[i].val %></td>
+									<td class="cell100 column5"><%= din1[i].date.toLocaleString() %></td>
+									
+								</tr>
+              </tbody>
+              <% } %>
+              <% } else { %>
+                <div>No Digital Input 1 found.</div>
+              <% } %>
+						</table>
+								
+
+				                
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+	</div>
 
 
-    
-  </body>
+  <%- include('../../public/script/tails') %>
+
+</body>
 </html>

@@ -1,78 +1,74 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <%- include('../../public/script/header') %>
-    <title>Accelerometer</title>
-  </head>
-  <body>
-      
-    <%- include('../../public/script/navbar') %>
-    <div class ="container content">
-      
-      <div id="body-content">
-          
+<html lang="en">
+<head>
+	<title>Temperature</title>
+  <%- include('../../public/script/header') %>
+
+</head>
+<body>
+	<%- include('../../public/script/navbar') %>
+	<div class="limiter">
             <div class="">
-                <div class="subpage__header">
-                    <h1>Accelerometer</h1>
-                </div>
-                <a class="active btn btn-success" href="/acceleromerter/get">Update Temperature</a>
+                    <div class="subpage__header">
+                        <h1>Digital Input</h1>
+                    </div>
+                    <a class="active btn btn-success" href="/accelerometer/get">Update Digital Input</a>
             </div> 
-          <div id="content-box">
-              <table id="searchable-table" class="display">
+  
+    <div class="container-table100" style="background: transparent; text-align:center;"  >
+			<div class="wrap-table100">
+				
+				<div class="table100 ver3 m-b-110">
+					<div class="table100-head">
+						<table>
+							
+							<thead>
                   <% if(accelerometer.length>0) { %>
-                  <thead>
-                      <tr>
-                          <th>ID</th>
-                          <th>sensID</th>
-                          <th>X</th>
-                          <th>Y</th>
-                          <th>Z</th>
-                          <th>Date</th>
-                      </tr>
-                  </thead>
-                  <tbody></tbody>
-              </table>
-          <!-- Close content box-->
-         </div>
-         <div id="footer" class="header hide-desktop show-mobile">
-              <a href="#">Scroll to top</a>
-          </div>
-          <!-- Close body content-->
-          
-          <!-- Templates -->
-          <script id="datatable-template" type="">
-              
-              <% for(var i=0; i<accelerometer.length ;i++) { %>
-              
-              <tr class=" body">
-                  <td><%= accelerometer[i].TeamID %></td>
-                  <td><%= accelerometer[i].sensID %></td>
-                  <td><%= accelerometer[i].val_x %></td>
-                  <td><%= accelerometer[i].val_y %></td>
-                  <td><%= accelerometer[i].val_z %></td>
-                  <td><%= accelerometer[i].date.toLocaleString() %></td>
-                  
-                                
-                </tr>
-                
-                <% } %>
+								<tr class="row100 head">
+									<th class="cell100 column5">ID</th>
+									<th class="cell100 column5">SensID</th>
+									<th class="cell100 column5">X</th>
+                                    <th class="cell100 column5">Y</th>
+                                    <th class="cell100 column5">Z</th>
+                                    <th class="cell100 column5">Date</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
 
-                <% } else { %>
-                  <div>No accelerometer found.</div>
-                <% } %>
-<<<<<<< HEAD
-      </script> 
-=======
-      </script>
->>>>>>> f5ab8e26bf6542f2f74d95686ec0c03654ace625
+					<div class="table100-body js-pscroll">
+						<table>
+							
+							<tbody>
+                  <% for(var i=0; i<accelerometer.length;i++) { %> 
+								<tr class="row100 body">
+									<td class="cell100 column5"><%= accelerometer[i].TeamID %></td>
+									<td class="cell100 column5"><%= accelerometer[i].sensID %></td>
+                                    <td class="cell100 column5"><%= accelerometer[i].val_x %></td>
+                                    <td class="cell100 column5"><%= accelerometer[i].val_y %></td>
+                                    <td class="cell100 column5"><%= accelerometer[i].val_z %></td>
+									<td class="cell100 column5"><%= accelerometer[i].date.toLocaleString() %></td>
+									
+								</tr>
+              </tbody>
+              <% } %>
+              <% } else { %>
+                <div>No accelerometer found.</div>
+              <% } %>
+						</table>
+								
 
-      <!-- #################### End Code table#######################  -->
+				                
+					</div>
+				</div>
 
-  <!-- Custom JS -->
-  <script src="/datatable-template-master/js/base.js"></script>
-  <script src="/datatable-template-master/js/datatable-tabletop-load.js"></script>
-  <!-- Close content-->
-  </div>
-  </div>
-  </body>
+				
+			</div>
+		</div>
+	</div>
+
+
+  <%- include('../../public/script/tails') %>
+
+</body>
 </html>
