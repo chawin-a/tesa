@@ -8,12 +8,12 @@
 <body>
 	<%- include('../../public/script/navbar') %>
 	<div class="limiter">
-            <div class="">
-                    <div class="subpage__header">
-                        <h1>Digital Input</h1>
-                    </div>
-                    <a class="active btn btn-success" href="/accelerometer/get">Update Digital Input</a>
-            </div> 
+      <div class="">
+          <div class="subpage__header">
+              <h1>Digital Input</h1>
+          </div>
+          <a class="active btn btn-success" href="/accelerometer/get">Update Digital Input</a>
+  </div> 
   
     <div class="container-table100" style="background: transparent; text-align:center;"  >
 			<div class="wrap-table100">
@@ -27,10 +27,8 @@
 								<tr class="row100 head">
 									<th class="cell100 column5">ID</th>
 									<th class="cell100 column5">SensID</th>
-									<th class="cell100 column5">X</th>
-                                    <th class="cell100 column5">Y</th>
-                                    <th class="cell100 column5">Z</th>
-                                    <th class="cell100 column5">Date</th>
+									<th class="cell100 column5">Value</th>
+									<th class="cell100 column5">Date</th>
 								</tr>
 							</thead>
 						</table>
@@ -44,9 +42,7 @@
 								<tr class="row100 body">
 									<td class="cell100 column5"><%= accelerometer[i].TeamID %></td>
 									<td class="cell100 column5"><%= accelerometer[i].sensID %></td>
-                                    <td class="cell100 column5"><%= accelerometer[i].val_x %></td>
-                                    <td class="cell100 column5"><%= accelerometer[i].val_y %></td>
-                                    <td class="cell100 column5"><%= accelerometer[i].val_z %></td>
+									<td class="cell100 column5"><%= accelerometer[i].val %></td>
 									<td class="cell100 column5"><%= accelerometer[i].date.toLocaleString() %></td>
 									
 								</tr>
@@ -67,13 +63,6 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
-=======
-                <% } else { %>
-                  <div>No accelerometer found.</div>
-                <% } %>
-      </script>
->>>>>>> 4caec9147a94d7c71a6326d1a7e2cbe1683289e7
 
   <%- include('../../public/script/tails') %>
 
