@@ -32,31 +32,52 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
   ])
   .then(output => {
     var obj = {};
-    obj["Temperature"] = [];
     for(var i=0;i<output[0].length;i++) {
       var temp = {};
+      // temp["teamID"] = Number(output[0][i]["TeamID"]);
+      var teamID = Number(output[0][i]["TeamID"]);
+      if(obj[teamID] == null) {
+        obj[teamID] = {};
+      }
+      var sensID = Number(output[0][i]["sensID"]);
+      if(obj[teamID][sensID] == null) {
+        obj[teamID][sensID] = {};
+      }
       temp["val"] = Number(output[0][i]["val"]);
-      temp["teamID"] = Number(output[0][i]["TeamID"]);
       temp["date"] = Number(output[0][i]["date"] - yesterday);
-      obj["Temperature"].push(temp);
+      obj[teamID][sensID]["Temperature"] = temp;
     }
-    obj["Accelerometer"] = [];
     for(var i=0;i<output[1].length;i++) {
       var temp = {};
+      var teamID = Number(output[1][i]["TeamID"]);
+      if(obj[teamID] == null) {
+        obj[teamID] = {};
+      }
+      var sensID = Number(output[1][i]["sensID"]);
+      if(obj[teamID][sensID] == null) {
+        obj[teamID][sensID] = {};
+      }
       temp["val_x"] = Number(output[1][i]["val_x"]);
       temp["val_y"] = Number(output[1][i]["val_y"]);
       temp["val_z"] = Number(output[1][i]["val_z"]);
-      temp["teamID"] = Number(output[1][i]["TeamID"]);
+      // temp["teamID"] = Number(output[1][i]["TeamID"]);
       temp["date"] = Number(output[1][i]["date"] - yesterday);
-      obj["Accelerometer"].push(temp);
+      obj[teamID][sensID]["Accelerometer"] = temp;
     }
-    obj["Din1"] = [];
     for(var i=0;i<output[2].length;i++) {
       var temp = {};
+      var teamID = Number(output[2][i]["TeamID"]);
+      if(obj[teamID] == null) {
+        obj[teamID] = {};
+      }
+      var sensID = Number(output[2][i]["sensID"]);
+      if(obj[teamID][sensID] == null) {
+        obj[teamID][sensID] = {};
+      }
       temp["val"] = Number(output[2][i]["val"]);
-      temp["teamID"] = Number(output[2][i]["TeamID"]);
+      // temp["teamID"] = Number(output[2][i]["TeamID"]);
       temp["date"] = Number(output[2][i]["date"] - yesterday);
-      obj["Din1"].push(temp);
+      obj[teamID][sensID]["Din1"] = temp;
     }
     res.send(obj);
   })
@@ -65,7 +86,13 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
 router.post('/alert', function(req, res, next) {
   var alert = req.body;
   // console.log(alert);
-  res.render('alert', { teamID: alert.teamID, description: alert.description });
+  res.render('alert', {
+    teamID: alert.teamID, 
+    elephen: alert.elephen,
+    fire: alert.fire,
+    tree: alert.tree,
+    normal: alert.normal 
+  });
 });
 
 module.exports = router;
