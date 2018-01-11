@@ -7,29 +7,34 @@ var temperature = require("../controllers/TemperatureController.js");
 var urls = require('../config/urls');
 
 // Get all temperature
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
   temperature.list(req, res);
 });
 
-router.get('/get', function(req, res) {
+router.get('/get', function (req, res) {
   var requestData = [];
-  for(var i=1;i<=urls.teams;i++) {
-    requestData.push(request(urls.url + 'temperature/' + i + '/1'));
+  for (var i = 0; i < urls.teams; i++) {
+    requestData.push(request(urls.url + 'temperature/' + urls.teamID[i] + '/2', urls.teamID[i]));
   }
   Promise.all(requestData)
-  .then(function(data) {
-    for(var i=0;i<data.length;i++) {
-      var d = JSON.parse(data[i]);
-      if(d["statusCode"] != "00") continue;
-      var obj = d["data"][0];
-      obj["TeamID"] = i+1;
-      var q = new Temperature(obj);
-      q.save();
-    }
-  })
-  .then(function() {
-    res.redirect("/temperature");
-  })
+    .then(function (output) {
+      var updated = [];
+      for (var i = 0; i < output.length; i++) {
+        var d = JSON.parse(output[i].body);
+        if (d["statusCode"] != "00") continue;
+        for (var j = 0; j < d["data"].length; j++) {
+          var obj = d["data"][j];
+          obj["TeamID"] = output[i].TeamID;
+          updated.push(Temperature.update({sensID: obj.sensID}, obj, {upsert: true}, function(err, raw) {
+            if(err) console.log(err);
+          }));
+        }
+      }
+      return Promise.all(updated);
+    })
+    .then(function () {
+      res.redirect("/temperature");
+    })
 });
 
 module.exports = router;

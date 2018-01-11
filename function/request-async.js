@@ -1,10 +1,10 @@
 var request = require('request');
 
-module.exports = function requestp(url) {
+module.exports = function requestp(url, TeamID) {
     return new Promise(function(resolve, reject) {
         request(url, function(error, res, body) {
             if (error) reject(reject);
-            resolve(body);
+            resolve({body, TeamID});
         })
     })
 }
