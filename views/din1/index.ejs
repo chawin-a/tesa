@@ -12,6 +12,7 @@
       <table class="list-table">
         <thead>
           <tr>
+            <th>TeamID</th>
             <th>sensID</th>
             <th>val</th>
             <th>date</th>
@@ -21,6 +22,7 @@
 
           <% for(var i=0; i<din1.length;i++) { %>
             <tr>
+              <td><%= din1[i].TeamID %></td>
               <td><%= din1[i].sensID %></td>
               <td><%= din1[i].val %></td>
               <td><%= din1[i].date %></td>
