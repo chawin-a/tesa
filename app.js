@@ -20,6 +20,7 @@ var magnetometer = require('./routes/magnetometer');
 var humidity = require('./routes/humidity');
 var gyroscope = require('./routes/gyroscope');
 var accelerometer = require('./routes/accelerometer');
+var din1 = require('./routes/din1');
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use('/magnetometer', magnetometer);
 app.use('/humidity', humidity);
 app.use('/gyroscope', gyroscope);
 app.use('/accelerometer', accelerometer);
+app.use('/din1', din1);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
