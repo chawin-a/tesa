@@ -8,4 +8,4 @@ var TemperatureSchema = new mongoose.Schema({
     TeamID: String,
   });
 
-  module.exports = mongoose.model('Temparature', TemperatureSchema);
+  module.exports = mongoose.model('Temperature', TemperatureSchema);

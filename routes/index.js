@@ -4,6 +4,7 @@ var router = express.Router();
 var Temperature = require('../models/Temperature')
 var Accelerometer = require('../models/Accelerometer')
 var Din1 = require('../models/Din1')
+var Predict = require('../models/Predict')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -85,14 +86,27 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
 
 router.post('/alert', function(req, res, next) {
   var alert = req.body;
+  alert.TeamID = String(alert.TeamID).substr(1);
   // console.log(alert);
-  res.render('alert', {
-    teamID: alert.teamID, 
-    elephen: alert.elephen,
-    fire: alert.fire,
-    tree: alert.tree,
-    normal: alert.normal 
-  });
+  var q = new Predict(alert);
+  q.save().then(() => res.send("Success!"));
+
+  // res.render('alert', {
+  //   TeamID: alert.teamID, 
+  //   elephen: alert.elephen,
+  //   fire: alert.fire,
+  //   tree: alert.tree,
+  //   normal: alert.normal 
+  // });
 });
+
+router.get('/predict', function(req, res, next) {
+  Predict.find({}).exec(function(err, predict) {
+    if(err) console.log(err);
+    else {
+      res.render('../views/predict/predict', {predict});
+    }
+  })
+})
 
 module.exports = router;
