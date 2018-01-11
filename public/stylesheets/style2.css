@@ -1,0 +1,41 @@
+.container{
+    margin-top: 30px;
+}
+
+.container h3 a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #00AE4D;
+    border-radius: 6px;
+    color: #FFFFFF;
+  }
+
+
+
+
+
+  .container .row form input[type=time] {
+    width: 150px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+ .container .row form input[type=submit] {
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container .row form input[type=submit]:hover {
+
+    background-color: #45a049;
+}
