@@ -22,12 +22,12 @@
                   <% if(accelerometer.length>0) { %>
                   <thead>
                       <tr>
-                          <th>TeamID</th>
+                          <th>ID</th>
                           <th>sensID</th>
-                          <th>val_x</th>
-                          <th>val_y</th>
-                          <th>val_z</th>
-                          <th>date</th>
+                          <th>X</th>
+                          <th>Y</th>
+                          <th>Z</th>
+                          <th>Date</th>
                       </tr>
                   </thead>
                   <tbody></tbody>
@@ -50,7 +50,7 @@
                   <td><%= accelerometer[i].val_x %></td>
                   <td><%= accelerometer[i].val_y %></td>
                   <td><%= accelerometer[i].val_z %></td>
-                  <td><%= accelerometer[i].date %></td>
+                  <td><%= accelerometer[i].date.toLocaleString() %></td>
                   
                                 
                 </tr>
@@ -60,7 +60,11 @@
                 <% } else { %>
                   <div>No accelerometer found.</div>
                 <% } %>
+<<<<<<< HEAD
+      </script> 
+=======
       </script>
+>>>>>>> f5ab8e26bf6542f2f74d95686ec0c03654ace625
 
       <!-- #################### End Code table#######################  -->
 
