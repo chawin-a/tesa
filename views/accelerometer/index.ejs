@@ -36,7 +36,7 @@
     
   </head>
   <body>
-
+      <div class ="content">
       <!-- <div class ="row" >
           <h3><a href="/accelerometer/get">Get Temperature</a></h3>  
             <h1>Accelerometer</h1>
@@ -86,7 +86,7 @@
 
       <!-- ########################### Start navbar ############################ -->
 
-      <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <ul class="navbar-nav">
               <li class="nav-item active">
                   <a class="nav-link" href="#"><h5>TESA</h5></a>
@@ -101,13 +101,15 @@
               <a class="nav-link" href="/din1">Digital Input 1</a>
             </li> 
           </ul>
-        </nav> -->
+        </nav>
       <!-- ########################### End navbar ############################ -->
 
 
       <!-- <div class ="content">
       <div id="body-content">
           <h1 class="hide-iframe">Accelerometer</h1>
+          <!-- Subhead -->
+          <<h1 class="hide-iframe">Accelerometer</h1>
           <!-- Subhead -->
           <div class="header header-sub hide-desktop show-iframe">
               <div class="header-sub-header">
@@ -123,10 +125,10 @@
                       <tr>
                           <th>TeamID</th>
                           <th>sensID</th>
-                          <th>Val_x</th>
-                          <th>Val_y</th>
-                          <th>Val_z</th>
-                          <th>Date</th>
+                          <th>val_x</th>
+                          <th>val_y</th>
+                          <th>val_z</th>
+                          <th>date</th>
                       </tr>
                   </thead>
                   <tbody></tbody>
@@ -140,13 +142,18 @@
           </div>
           <!-- Templates -->
           <script id="datatable-template" type="">
+              
               <% for(var i=0; i<accelerometer.length ;i++) { %>
               
-              <tr class="row100 body">
+              <tr class=" body">
                   <td><%= accelerometer[i].TeamID %></td>
                   <td><%= accelerometer[i].sensID %></td>
-                  c<td><%= accelerometer[i].val_x %></td>
+                  <td><%= accelerometer[i].val_x %></td>
+                  <td><%= accelerometer[i].val_y %></td>
+                  <td><%= accelerometer[i].val_z %></td>
+                  <td><%= accelerometer[i].date %></td>
                   
+                                
                 </tr>
                 
                 <% } %>
