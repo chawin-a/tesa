@@ -8,11 +8,8 @@
     background-color: #00AE4D;
     border-radius: 6px;
     color: #FFFFFF;
+
   }
-
-
-
-
 
   .container .row form input[type=time] {
     width: 150px;
@@ -22,6 +19,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    
   }
 
  .container .row form input[type=submit] {
@@ -33,6 +31,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    
 }
 
 .container .row form input[type=submit]:hover {
