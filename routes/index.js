@@ -15,16 +15,19 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
   var end = Number(req.params.end / 100).toFixed(2).toString().split('.');
   var startTime = new Date();
   var endTime = new Date();
+  startTime.setDate(11);
   startTime.setHours(start[0]);
   startTime.setMinutes(start[1]);
   startTime.setSeconds(0);
+  endTime.setDate(11);
   endTime.setHours(end[0]);
   endTime.setMinutes(end[1]);
   endTime.setSeconds(0);
+  console.log(startTime, endTime);
   Promise.all([
-    Temperature.find({date: {"$gte": startTime, "$lt": endTime}}).exec(),
-    Accelerometer.find({date: {"$gte": startTime, "$lt": endTime}}).exec(),
-    Din1.find({date: {"$gte": startTime, "$lt": endTime}}).exec()
+    Temperature.find({}).where('date').gte(startTime).lt(endTime).exec(),
+    Accelerometer.find({}).where('date').gte(startTime).lt(endTime).exec(),
+    Din1.find({}).where('date').gte(startTime).lt(endTime).exec()
   ])
   .then(output => {
     var obj = {};
@@ -33,6 +36,7 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
       var temp = {};
       temp["val"] = output[0][i]["val"];
       temp["teamID"] = output[0][i]["TeamID"];
+      temp["date"] = output[0][i]["date"];
       obj["Temperature"].push(temp);
     }
     obj["Accelerometer"] = [];
@@ -42,6 +46,7 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
       temp["val_y"] = output[1][i]["val_y"];
       temp["val_z"] = output[1][i]["val_z"];
       temp["teamID"] = output[1][i]["TeamID"];
+      temp["date"] = output[1][i]["date"];
       obj["Accelerometer"].push(temp);
     }
     obj["Din1"] = [];
@@ -49,6 +54,7 @@ router.get('/allTeamSensor/:start/:end/', function(req, res, next) {
       var temp = {};
       temp["val"] = output[2][i]["val"];
       temp["teamID"] = output[2][i]["TeamID"];
+      temp["date"] = output[2][i]["date"];
       obj["Din1"].push(temp);
     }
     res.send(obj);

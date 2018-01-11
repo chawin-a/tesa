@@ -8,6 +8,7 @@ var request = require('./function/request-async');
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
+// mongoose.connect('mongodb://localhost:27017/tgr2018test', { useMongoClient: true })
 mongoose.connect('mongodb://test:1q2w3e4r@localhost:27017/tgr2018test', { useMongoClient: true })
   .then(() => {
     console.log('connection succesful')
