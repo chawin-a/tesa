@@ -99,3 +99,7 @@ body{
   max-height: 100px;
 }
 
+.subpage__header{
+  max-width: 80%;
+}
+

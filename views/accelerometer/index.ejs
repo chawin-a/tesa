@@ -8,24 +8,16 @@
       
     <%- include('../../public/script/navbar') %>
     <div class ="container content">
-      <div class ="row" >
-          <h3><a href="/accelerometer/get">Get Accelerometer</a></h3>  
-          </div>
-      
       
       <div id="body-content">
           
-          <!-- Subhead -->
-          <h1 class="hide-iframe">Accelerometer</h1>
-          <!-- Subhead -->
-          <div class="header header-sub hide-desktop show-iframe">
-              <div class="header-sub-header">
-                  <p>Accelerometer</p>
-              </div>
-          </div>
-          Content box
+            <div class="">
+                <div class="subpage__header">
+                    <h1>Accelerometer</h1>
+                </div>
+                <a class="active btn btn-success" href="/acceleromerter/get">Update Temperature</a>
+            </div> 
           <div id="content-box">
-              <p id="first-p" class="intro-text">Edit by Psyduck and the Gang</p>
               <table id="searchable-table" class="display">
                   <% if(accelerometer.length>0) { %>
                   <thead>
@@ -68,7 +60,11 @@
                 <% } else { %>
                   <div>No accelerometer found.</div>
                 <% } %>
+<<<<<<< HEAD
       </script> 
+=======
+      </script>
+>>>>>>> f5ab8e26bf6542f2f74d95686ec0c03654ace625
 
       <!-- #################### End Code table#######################  -->
 
