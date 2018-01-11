@@ -1,19 +1,10 @@
-body {
-  padding: 30px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: #555555;
-}
+
 
 a {
   color: #00B7FF;
 }
 
-.container {
-  padding: 20px;
-  background-color: #efefef;
-  width: 400px;
-  border-radius: 6px;
-}
+
 .container h3 a {
   text-decoration: none;
   padding: 10px 20px;
@@ -28,14 +19,14 @@ a {
 }
 
 .container table {
-  width: 360px;
-}
+  width: auto;
+} 
 
 .container table tr td {
   padding: 5px;
 }
 
-.container table tr td input, .container table tr td textarea {
+ .container table tr td input, .container table tr td textarea {
   border: solid 1px #dddddd;
   padding: 5px 10px;
   border-radius: 6px;
@@ -43,7 +34,7 @@ a {
   color: #777777;
 }
 
-.container table tr td button {
+.container  table tr td button {
   border: solid 1px #AABF5C;
   background-color: #00AE4D;
   border-radius: 6px;
@@ -52,6 +43,7 @@ a {
   margin: 10px 0;
   padding: 10px 20px;
 }
+
 
 .container form button {
   border: solid 1px #CB2027;
@@ -64,7 +56,7 @@ a {
 }
 
 .container .list-table {
-  width: 360px;
+  width: auto;
   border: solid 2px #DDDDDD;
   border-spacing: 0;
 }
@@ -72,3 +64,6 @@ a {
 .container .list-table th {
   border-bottom: solid 2px #DDDDDD;
 }
+
+
+

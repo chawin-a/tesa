@@ -12,6 +12,7 @@
       <table class="list-table">
         <thead>
           <tr>
+            <th>TeamID</th>
             <th>sensID</th>
             <th>val_x</th>
             <th>val_y</th>
@@ -23,6 +24,7 @@
 
           <% for(var i=0; i<accelerometer.length;i++) { %>
             <tr>
+              <td><%= accelerometer[i].TeamID %></td>
               <td><%= accelerometer[i].sensID %></td>
               <td><%= accelerometer[i].val_x %></td>
               <td><%= accelerometer[i].val_y %></td>
