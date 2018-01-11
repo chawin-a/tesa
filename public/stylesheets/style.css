@@ -73,6 +73,10 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+body{
+  background: transparent;
+}
 .index__tesa-logo{
   margin-top: 70px;
   margin-left: 150px;
