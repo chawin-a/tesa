@@ -83,7 +83,7 @@ function loadDataTable() {
                 "sWidth": "13%"
                 // "sType": "formatted-num" 
             },{
-                "sWidth": "13%"
+                "sWidth": "15%"
                 // "sType": "formatted-num" 
             },{
                 "sWidth": "5%"

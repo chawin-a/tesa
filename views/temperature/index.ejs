@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <%- include('../../public/script/header') %>
     <title>Temperature</title>
 
     <!-- code for black table -->
@@ -54,17 +55,19 @@
     
   </head>
   <body>
+
+    <%- include('../../public/script/navbar') %>
     <div class ="content">
 
       
-      <!-- <div class ="row" >
+      <div class ="row" >
         <h3><a href="/temperature/get">Get Temperature</a></h3>  
           <h1>Temperature</h1>
           <form method="post" action="/temperature/time">
              <input type="time" name="time" placeholder="(HH:MM)"  />
              <input type="submit" />
           </form>
-        </div> -->
+        </div>
 
 
       
@@ -115,26 +118,6 @@
           <!-- End -->
       <!-- End old table code -->
 
-      <!-- ########################### Start navbar ############################ -->
-
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-          <ul class="navbar-nav">
-              <li class="nav-item active">
-                  <a class="nav-link" href="#"><h5>TESA</h5></a>
-                </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/temperature">Temperature</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/accelerometer">Accelerometer</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/din1">Digital Input 1</a>
-            </li> 
-          </ul>
-        </nav>
-      <!-- ########################### End navbar ############################ -->
-
 
       <!-- #################### Start Code table#######################  -->
 
@@ -170,8 +153,7 @@
           </div>
           <!-- Templates -->
           <script id="datatable-template" type="">
-              <% for(var i=0; i<temperature.length;i++) { %>
-              
+              <% for(var i=0; i<temperature.length;i++) { %> 
               <tr class="row100 body">
                   <td><%= temperature[i].TeamID %></td>
                   <td><%= temperature[i].sensID %></td>
@@ -187,12 +169,12 @@
       </script>
 
       <!-- #################### End Code table#######################  -->
-
+    
   <!-- Custom JS -->
   <script src="/datatable-template-master/js/base.js"></script>
   <script src="/datatable-template-master/js/datatable-tabletop-load.js"></script>
   <!-- Close content-->
-  </div>
+  
     
   </body>
 </html>
