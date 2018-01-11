@@ -1,144 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <%- include('../../public/script/header') %>
-    <title>Temperature</title>
+<html lang="en">
+<head>
+	<title>Temperature</title>
+  <%- include('../../public/script/header') %>
 
-    <!-- code for black table -->
-        <!-- <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="TableTemplate/images/icons/favicon.ico"/>
-        <link rel="stylesheet" type="text/css" href="TableTemplate/vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="TableTemplate/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="TableTemplate/vendor/animate/animate.css">
-        <link rel="stylesheet" type="text/css" href="TableTemplate/vendor/select2/select2.min.css">
-        <link rel="stylesheet" type="text/css" href="TableTemplate/vendor/perfect-scrollbar/perfect-scrollbar.css">
-        <link rel="stylesheet" type="text/css" href="TableTemplate/css/util.css">
-        <link rel="stylesheet" type="text/css" href="TableTemplate/css/main.css"> -->
-        
-    <!-- End of code for black table -->
-
-    <!-- Old css -->
-        <!-- <link rel='stylesheet' href='/stylesheets/style2.css' /> -->
-    <!-- Close Old Css -->
-    
-  </head>
-  <body>
-
-    <%- include('../../public/script/navbar') %>
-    <div class ="content">
-
-      
-      <div class ="row default-button" >
-        <h3><a href="/temperature/get">Get Temperature</a></h3>  
-      </div>
-
-
-      
-      <!-- Old table code  -->
-          <!-- start -->
-          <!-- <div class="limiter">
-              <div class="container-table100">
-                <div class="wrap-table100">    
-                  <div class="table100 ver3 m-b-110">
-                    <div class="table100-head">
-                        <% if(temperature.length>0) { %>
-                      <table>
-                        <thead>
-                          <tr class="row100 head">
-                            <th class="cell100 column1">TeamID</th>
-                            <th class="cell100 column2">sensID</th>
-                            <th class="cell100 column3">Val</th>
-                            <th class="cell100 column4">Date</th>                 
-                          </tr>
-                        </thead>
-                      </table>
-                    </div>
-          
-                    <div class="table100-body js-pscroll">        
-                      <table>
-                        <tbody>
-                            <% for(var i=0; i<temperature.length;i++) { %>
-                          <tr class="row100 body">
-                            <td class="cell100 column1"><%= temperature[i].TeamID %></td>
-                            <td class="cell100 column2"><%= temperature[i].sensID %></td>
-                            <td class="cell100 column3"><%= temperature[i].val %></td>
-                            <td class="cell100 column4"><%= temperature[i].date %></td>
-                          </tr>
-                          <% } %>
-                        </tbody>
-                      </table>
-                      <% } else { %>
-                        <div>No temperature found.</div>
-                      <% } %>
-                    </div>
-                  </div>
-          
-                  
-                </div>
-              </div>
-            </div> -->
-
-          <!-- End -->
-      <!-- End old table code -->
-
-
-      <!-- #################### Start Code table#######################  -->
-
-      <div id="body-content">
-          <h1 class="hide-iframe">Temperature</h1>
-          <!-- Subhead -->
-          <div class="header header-sub hide-desktop show-iframe">
-              <div class="header-sub-header">
-                  <p>Temperature</p>
-              </div>
+</head>
+<body>
+	<%- include('../../public/script/navbar') %>
+	<div class="limiter">
+      <div class="">
+          <div class="subpage__header">
+              <h1>Digital Input</h1>
           </div>
-          <!-- Content box-->
-          <div id="content-box">
-              <p id="first-p" class="intro-text">Edit by Psyduck and the Gang</p>
-              <table id="searchable-table" class="display">
-                  <% if(temperature.length>0) { %>
-                  <thead>
-                      <tr>
-                          <th>TeamID</th>
-                          <th>sensID</th>
-                          <th>Val</th>
-                          <th>Date/th>
-                      </tr>
-                  </thead>
-                  <tbody></tbody>
-              </table>
-          <!-- Close content box-->
-         </div>
-         <div id="footer" class="header hide-desktop show-mobile">
-              <a href="#">Scroll to top</a>
-          </div>
-          <!-- Close body content-->
-          </div>
-          <!-- Templates -->
-          <script id="datatable-template" type="">
-              <% for(var i=0; i<temperature.length;i++) { %> 
-              <tr class="row100 body">
-                  <td><%= temperature[i].TeamID %></td>
-                  <td><%= temperature[i].sensID %></td>
-                  <td><%= temperature[i].val %></td>
-                  <td><%= temperature[i].date %></td>
-                </tr>
-                
-                <% } %>
-
-                <% } else { %>
-                  <div>No temperature found.</div>
-                <% } %>
-      </script>
-
-      <!-- #################### End Code table#######################  -->
-    
-  <!-- Custom JS -->
-  <script src="/datatable-template-master/js/base.js"></script>
-  <script src="/datatable-template-master/js/datatable-tabletop-load.js"></script>
-  <!-- Close content-->
+          <a class="active btn btn-success" href="/temperature/get">Update Digital Input</a>
+  </div> 
   
-    
-  </body>
+    <div class="container-table100" style="background: transparent; text-align:center;"  >
+			<div class="wrap-table100">
+				
+				<div class="table100 ver3 m-b-110">
+					<div class="table100-head">
+						<table>
+							
+							<thead>
+                  <% if(temperature.length>0) { %>
+								<tr class="row100 head">
+									<th class="cell100 column5">ID</th>
+									<th class="cell100 column5">SensID</th>
+									<th class="cell100 column5">Value</th>
+									<th class="cell100 column5">Date</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							
+							<tbody>
+                  <% for(var i=0; i<temperature.length;i++) { %> 
+								<tr class="row100 body">
+									<td class="cell100 column5"><%= temperature[i].TeamID %></td>
+									<td class="cell100 column5"><%= temperature[i].sensID %></td>
+									<td class="cell100 column5"><%= temperature[i].val %></td>
+									<td class="cell100 column5"><%= temperature[i].date.toLocaleString() %></td>
+									
+								</tr>
+              </tbody>
+              <% } %>
+              <% } else { %>
+                <div>No temperature found.</div>
+              <% } %>
+						</table>
+								
+
+				                
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+	</div>
+
+
+  <%- include('../../public/script/tails') %>
+
+</body>
 </html>
